@@ -1,0 +1,12 @@
+<ion-grid>
+  <ion-row>
+    <ion-col
+      size="12"
+      size-sm="6"
+      size-md="4"
+      *ngFor="let post of posts; trackBy: trackByItems"
+    >
+      <app-post [attr.data-reference-id]="post.id" [post]="post"></app-post>
+    </ion-col>
+  </ion-row>
+</ion-grid>

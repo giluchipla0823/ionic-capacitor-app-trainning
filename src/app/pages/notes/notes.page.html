@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <app-back-button [defaultHref]="'/home'"></app-back-button>
+    </ion-buttons>
+    <ion-title>Notes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <app-searchbar (onChange)="searchTerm = $event"></app-searchbar>
+
+  <ng-container
+    *ngIf="(notes | filterData: searchTerm: ['title']) as notesList"
+  >
+    <ion-list>
+      <ion-item *ngFor="let note of notesList">
+        <ion-label>
+          <h2 [appHighlight]="searchTerm">{{ note.title }}</h2>
+          <p
+            [appHighlight]="searchTerm"
+            customClasses="highlight--customizable"
+          >
+            {{ note.message }}
+          </p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ng-container>
+</ion-content>

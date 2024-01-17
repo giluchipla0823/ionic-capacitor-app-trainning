@@ -1,0 +1,49 @@
+<ion-content class="ion-padding" [forceOverscroll]="false">
+  <div class="wrapper-content">
+    <div class="card">
+      <div class="card-header">
+        <img src="assets/images/logo.png" alt="Angular logo" />
+
+        <h1 class="card-title">Login</h1>
+      </div>
+      <div class="card-content">
+        <form [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="controls-form">
+            <ion-item>
+              <ion-icon slot="start" name="person-outline"></ion-icon>
+              <ion-input
+                type="email"
+                placeholder="Email"
+                formControlName="email"
+              ></ion-input>
+            </ion-item>
+            <app-error-messages [control]="f.email"></app-error-messages>
+            <ion-item>
+              <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+
+              <app-show-hide-password>
+                <ion-input
+                  type="password"
+                  placeholder="Password"
+                  formControlName="password"
+                ></ion-input>
+              </app-show-hide-password>
+            </ion-item>
+            <app-error-messages [control]="f.password"></app-error-messages>
+            <ion-item lines="none" class="remember-item">
+              <ion-toggle
+                mode="md"
+                formControlName="remember_me"
+                justify="space-between"
+                >Remember me</ion-toggle
+              >
+            </ion-item>
+          </div>
+          <div class="wrapper-btn-login">
+            <ion-button type="submit" class="btn-login"> Enter </ion-button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>

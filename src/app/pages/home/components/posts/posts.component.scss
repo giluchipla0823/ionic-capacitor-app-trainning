@@ -1,0 +1,11 @@
+ion-grid {
+  --ion-grid-padding: 0;
+  margin-left: -10px;
+  margin-right: -10px;
+
+  ion-row {
+    ion-col {
+      --ion-grid-column-padding: 0;
+    }
+  }
+}

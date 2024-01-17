@@ -1,0 +1,8 @@
+ion-searchbar {
+  padding-inline-start: 0;
+  padding-inline-end: 0;
+
+  ::ng-deep .searchbar-input-container {
+    min-height: 40px;
+  }
+}

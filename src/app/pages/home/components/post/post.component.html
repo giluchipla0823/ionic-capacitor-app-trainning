@@ -1,0 +1,11 @@
+<ion-card *ngIf="post" mode="ios">
+  <ion-img [src]="post.photo" [alt]="post.title"></ion-img>
+
+  <ion-card-header>
+    <ion-card-title>{{ post.title }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <p>{{ post.text }}</p>
+  </ion-card-content>
+</ion-card>
